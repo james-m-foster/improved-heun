@@ -66,7 +66,7 @@ T = 1.0
 simulations = 1000000
 
 # no of steps used by the fine and coarse approximations
-no_of_crude_steps = 3
+no_of_crude_steps = 100
 no_of_fine_steps = 10
 
 # step sizes
@@ -172,10 +172,10 @@ sec_moment_ah_error = sec_moment_ah_error /  simulations
 
 # display results
 print('Strong error for Euler-Maruyama: ', math.sqrt(strong_em_error))
-print('Mean error for Euler-Maruyama: ', abs(mean_em_error), '\n')
+print('Mean error for Euler-Maruyama: ', abs(mean_em_error))
 print('Second moment error for Euler-Maruyama: ', abs(sec_moment_em_error), '\n')
 print('Strong error for Heun: ', math.sqrt(strong_h_error))
-print('Mean error for Heun: ', abs(mean_h_error), '\n')
+print('Mean error for Heun: ', abs(mean_h_error))
 print('Second moment error for Heun: ', abs(sec_moment_h_error), '\n')
 print('Strong error for approximate Heun: ', math.sqrt(strong_ah_error))
 print('Mean error for approximate Heun: ', abs(mean_ah_error))
