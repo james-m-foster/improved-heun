@@ -36,27 +36,27 @@ def Heun(y, h, w):
     return y + 0.5*(fy + f(y1))*h + sigma*w
 
 def ApproxHeun(y, fy, h, w):
-    y1 = y + fy*h + sigma*w
+    y1 = y + fy * h + sigma * w
     fy1 = f(y1)
-    y2 = y + 0.5*(fy + fy1)*h + sigma*w
+    y2 = y + 0.5*(fy + fy1) * h + sigma*w
     
     return y2, fy1
 
 def ShiftedHeun(y, h, w, area):
-    y1 = y + sigma*(half_minus_root_six_over_six * w + area)
+    y1 = y + sigma * (half_minus_root_six_over_six * w + area)
     
     fy1 = f(y1)
     
     y2 = y1 + fy1 * h + root_six_over_three_sigma*w
     
-    return y + 0.5*(fy1 + f(y2)) + sigma * w
+    return y + 0.5*(fy1 + f(y2)) * h + sigma * w
 
 def SRK(y, h, w, area):
-    y1 = y + sigma*(half_plus_root_six_over_six * w + area)
+    y1 = y + sigma * (half_plus_root_six_over_six * w + area)
         
-    y2 = y + f(y) * h + sigma*(half_minus_root_six_over_six * w + area)
+    y2 = y + f(y) * h + sigma * (half_minus_root_six_over_six * w + area)
     
-    return y + 0.5*(f(y1) + f(y2))*h + sigma * w
+    return y + 0.5*(f(y1) + f(y2)) * h + sigma * w
 
 
 # interval length
@@ -66,7 +66,7 @@ T = 1.0
 simulations = 1000000
 
 # no of steps used by the fine and coarse approximations
-no_of_crude_steps = 300
+no_of_crude_steps = 3
 no_of_fine_steps = 10
 
 # step sizes
